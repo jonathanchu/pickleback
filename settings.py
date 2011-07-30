@@ -27,7 +27,7 @@ TEMPLATE_DEBUG = True
 ADMINS = (
     ('Jonathan Chu', 'jc@3atmospheres.com'),
     ('Nick Ficano', 'nf@3atmospheres.com'),
-    ('Bjarni Júlíusson', 'bj@3atmospheres.com'),
+    ('Bjarni Juliusson', 'bj@3atmospheres.com'),
 )
 
 MANAGERS = ADMINS
