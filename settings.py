@@ -21,8 +21,8 @@ TEMPLATE_DIRS = (
 ## DEBUGGING
 # ---------------------------------------------------------------------------
 
-DEBUG = True
-TEMPLATE_DEBUG = True
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 ADMINS = (
     ('Jonathan Chu', 'jc@3atmospheres.com'),
@@ -39,8 +39,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pickleback',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'pickleback',
+        'PASSWORD': 'nohZ2xe8ieK9eete',
         'HOST': '',
         'PORT': '',
     }
@@ -62,6 +62,15 @@ USE_L10N = True    # format time accounding to current locale
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
 
+## STATIC
+# ---------------------------------------------------------------------------
+
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    ez_path(PROJECT, 'static'),
+)
+
 ## INTERNALS
 # ---------------------------------------------------------------------------
 
@@ -73,6 +82,16 @@ STATICFILES_FINDERS = (
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.debug',
+    'django.core.context_processors.i18n',
+    'django.core.context_processors.media',
+    'django.core.context_processors.static',
+    'django.core.context_processors.request',
+    'django.contrib.messages.context_processors.messages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -96,8 +115,11 @@ INSTALLED_APPS = (
 
     # third party apps
     'gunicorn',
+    'sentry',
+    'sentry.client',
 
     # pickleback apps
+    # 'packages',
 )
 
 LOGGING = {

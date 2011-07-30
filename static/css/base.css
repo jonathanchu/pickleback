@@ -1,0 +1,151 @@
+/* `css reset - http://meyerweb.com/eric/tools/css/reset/ v2.0b1 | 201101
+----------------------------------------------------------------------------------------------------*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	outline: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+
+:focus {
+	outline: 0;
+}
+
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* `Pickleback
+----------------------------------------------------------------------------------------------------*/
+
+html {
+    height: 100%;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+ 	font: 14px/1.5 'Helvetica Neue', Arial, 'Liberation Sans', FreeSans, sans-serif;
+    /* background: #ebebeb url(/media/img/bg.png) repeat; */
+    color: #333;
+	height: 100%;
+}
+
+/* `elements
+----------------------------------------------------------------------------------------------------*/
+
+a { color: #000; text-decoration: none; outline: none; }
+
+hr {
+	border: 0 #ccc solid;
+	border-top-width: 1px;
+	clear: both;
+	height: 0;
+}
+
+img { border: none; }
+
+.last { margin-right: 0 !important; }
+
+.link { color: #1fa0c5; text-decoration: none; outline: none; }
+.link:hover { color: #1fa0c5; text-decoration: underline; outline: none; }
+
+::-moz-selection {
+    background: #FF5E99;
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: #FF5E99;
+    color: #fff;
+    text-shadow: none;
+}
+
+/* `layout
+----------------------------------------------------------------------------------------------------*/
+
+#container {
+    height: auto !important;
+    margin: 0 auto -155px;
+    min-height: 100%;
+}
+
+#header {
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    width: 900px;
+    height: 116px;
+    margin: 0 auto 0 auto;
+}
+
+#content {
+    width: 900px;
+    margin: 0 auto 0 auto;
+    padding-bottom: 155px;
+}
+
+#footer {
+    position: relative;
+    /* background: #83aed1 url(/media/img/ft.png) repeat-x; */
+    background-color: #83aed1;
+    color: #fff;
+    height: 125px;
+    text-align: center;
+    clear: both;
+    padding: 15px;
+}
+
+#footer a {
+    color: #fff;
+}
+
+#footer-cont {
+    position: relative;
+    width: 900px;
+    margin: 0 auto 0 auto;
+ 	font: 12px/1.5 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
