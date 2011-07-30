@@ -4,18 +4,18 @@ import sys
 ## GLOBAL PATHS
 # ---------------------------------------------------------------------------
 
-ez_path = lambda p1,p2: os.path.abspath(os.path.join(p1,p2))
+join = lambda p1,p2: os.path.abspath(os.path.join(p1,p2))
 
 PROJECT = os.path.abspath(os.path.dirname(__file__))
-LIBRARIES = ez_path(PROJECT, 'libraries')
-APPLICATIONS = ez_path(PROJECT, 'apps')
-MEDIA_ROOT = ez_path(PROJECT, 'media')
+LIBRARIES = join(PROJECT, 'libraries')
+APPLICATIONS = join(PROJECT, 'apps')
+MEDIA_ROOT = join(PROJECT, 'media')
 
 sys.path.insert(0, LIBRARIES)
 sys.path.insert(0, APPLICATIONS)
 
 TEMPLATE_DIRS = (
-    ez_path(PROJECT, 'templates'),
+    join(PROJECT, 'templates'),
 )
 
 ## DEBUGGING
@@ -68,7 +68,7 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    ez_path(PROJECT, 'static'),
+    join(PROJECT, 'static'),
 )
 
 ## INTERNALS

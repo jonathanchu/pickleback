@@ -6,10 +6,10 @@ import subprocess
 Config = ConfigParser.ConfigParser()
 Config.read('setup.cfg')
 join = lambda a,*p: os.path.abspath(os.path.join(a,*p))
+PROJECT_NAME = Config.get('project','name')
 
 def main(argv):
-    project_name = Config.get('project','name')
-    create_virtualenv(project_name)
+    create_virtualenv(PROJECT_NAME)
     
 def detect_active_virtualenv():
     """ check if a virtualenv is currently activated """
@@ -39,6 +39,7 @@ def create_virtualenv(project_name):
     base_req = os.path.join(working_dir, 'base-requirements.txt')
     easy_install(bin_path, 'pip')
     pip(bin_path, req_file=base_req)
+    django_init(bin_path, PROJECT_NAME)
 
 def easy_install(bin_path, package_name):
     f = os.path.join(bin_path, 'easy_install')
@@ -50,6 +51,10 @@ def pip(bin_path, package_name=None, req_file=None):
         subprocess.call([f, 'install', '-U', package_name])
     if req_file:
         subprocess.call([f, 'install', '-U', '-r', req_file])
+
+def django_init(bin_path, project_name=PROJECT_NAME):
+    f = os.path.join(bin_path, 'django-admin.py')
+    subprocess.call([f, 'startproject', project_name])
 
 if __name__ == '__main__':
     main(sys.argv[1:])
