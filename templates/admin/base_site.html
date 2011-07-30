@@ -1,0 +1,19 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} | {% trans 'Pickleback.me site admin' %}{% endblock %}
+
+{% block extrastyle %}
+<style>
+#header { background-color: #cfd1d2; border-bottom: solid 3px #00b3d8; }
+#branding h1 { color: #050607; }
+.module h2, .module caption, .inline-group h2 { background:#ccc url(/admin/media/img/admin/nav-bg.gif) bottom left repeat-x; color: #333940; }
+a.section:link, a.section:visited { color: #326342; }
+</style>
+{% endblock %}
+
+{% block branding %}
+<h1 id="site-name">{% trans 'Pickleback.me administration' %}</h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -9,3 +9,4 @@
 ## python specific
 *.pyc
 local_settings.py
+static/admin

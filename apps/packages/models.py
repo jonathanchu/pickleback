@@ -6,7 +6,7 @@ class Package(models.Model):
     Packages app
     """
     name        = models.CharField(_("Name"), max_length=100)
-    url         = models.URLField(_("URL of repo"))
+    url         = models.URLField(_("URL of repo"), verify_exists=False)
     description = models.TextField(_("Description"), blank=True)
 
     def __unicode__(self):
