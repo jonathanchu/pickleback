@@ -93,6 +93,11 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.admin',
+
+    # third party apps
+    'gunicorn',
+
+    # pickleback apps
 )
 
 LOGGING = {
