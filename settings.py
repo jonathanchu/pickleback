@@ -39,8 +39,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pickleback',
-        'USER': 'root',
-        'PASSWORD': '',
+        'USER': 'pickleback',
+        'PASSWORD': 'nohZ2xe8ieK9eete',
         'HOST': '',
         'PORT': '',
     }
@@ -61,6 +61,12 @@ USE_L10N = True    # format time accounding to current locale
 
 MEDIA_URL = '/media/'
 ADMIN_MEDIA_PREFIX = '/media/admin/'
+
+## STATIC
+# ---------------------------------------------------------------------------
+
+STATIC_ROOT = ez_path(PROJECT, 'static')
+STATIC_URL = '/static/'
 
 ## INTERNALS
 # ---------------------------------------------------------------------------
