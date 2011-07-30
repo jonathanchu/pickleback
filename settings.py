@@ -65,8 +65,11 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 ## STATIC
 # ---------------------------------------------------------------------------
 
-STATIC_ROOT = ez_path(PROJECT, 'static')
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    ez_path(PROJECT, 'static'),
+)
 
 ## INTERNALS
 # ---------------------------------------------------------------------------
