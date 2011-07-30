@@ -102,8 +102,11 @@ INSTALLED_APPS = (
 
     # third party apps
     'gunicorn',
+    'sentry',
+    'sentry.client',
 
     # pickleback apps
+    # 'packages',
 )
 
 LOGGING = {
