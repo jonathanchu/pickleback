@@ -9,6 +9,9 @@ urlpatterns = patterns('',
     # home
     url(r'^$', direct_to_template, { "template": "home.html", }, name="home"),
 
+    # packages
+    url(r'^build/', include("packages.urls")),
+
     # django-sentry
     (r'^sentry/', include('sentry.web.urls')),
 
