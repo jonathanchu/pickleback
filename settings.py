@@ -39,7 +39,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'pickleback',
-        'USER': 'postgres',
+        'USER': 'pickleback',
         'PASSWORD': 'nohZ2xe8ieK9eete',
         'HOST': '',
         'PORT': '',
