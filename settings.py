@@ -21,8 +21,8 @@ TEMPLATE_DIRS = (
 ## DEBUGGING
 # ---------------------------------------------------------------------------
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 ADMINS = (
     ('Jonathan Chu', 'jc@3atmospheres.com'),
@@ -31,6 +31,9 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+if DEBUG:
+    EMAIL_PORT = 1025
 
 ## DATABASE
 # ---------------------------------------------------------------------------
@@ -60,7 +63,7 @@ USE_L10N = True    # format time accounding to current locale
 # ---------------------------------------------------------------------------
 
 MEDIA_URL = '/media/'
-ADMIN_MEDIA_PREFIX = '/media/admin/'
+ADMIN_MEDIA_PREFIX = '/static/admin/'
 
 ## STATIC
 # ---------------------------------------------------------------------------
@@ -117,9 +120,10 @@ INSTALLED_APPS = (
     'gunicorn',
     'sentry',
     'sentry.client',
+    'south',
 
     # pickleback apps
-    # 'packages',
+    'packages',
 )
 
 LOGGING = {

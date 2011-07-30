@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}Packages{% endblock %}
+
+{% block body_class %}packages{% endblock %}
+
+{% block content %}
+
+{% if packages %}
+<form action="." method="POST">
+    {% for field in package_form %}
+	    {{ field }}<br>
+    {% endfor %}
+</form>
+{% else %}
+    Sorry, there are no packages currently available.
+{% endif %}
+
+{% endblock %}
