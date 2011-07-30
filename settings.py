@@ -21,8 +21,8 @@ TEMPLATE_DIRS = (
 ## DEBUGGING
 # ---------------------------------------------------------------------------
 
-DEBUG = False
-TEMPLATE_DEBUG = False
+DEBUG = True
+TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
     ('Jonathan Chu', 'jc@3atmospheres.com'),
@@ -65,7 +65,7 @@ ADMIN_MEDIA_PREFIX = '/media/admin/'
 ## STATIC
 # ---------------------------------------------------------------------------
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(PROJECT, 'static'),
