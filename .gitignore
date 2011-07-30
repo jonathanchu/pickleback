@@ -7,3 +7,4 @@
 
 ## python specific
 *.pyc
+local_settings.py
