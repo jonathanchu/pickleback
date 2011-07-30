@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load i18n %}
+
+{% block title %}Packages{% endblock %}
+
+{% block body_class %}packages{% endblock %}
+
+{% block content %}
+
+{% if packages %}
+    {% for package in packages %}
+        {{ package }}
+    {% endfor %}
+{% else %}
+    Sorry, there are no packages currently available.
+{% endif %}
+
+{% endblock %}
