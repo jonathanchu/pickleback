@@ -16,11 +16,10 @@ def build(request):
         package_form = PackageForm(request.POST)
         if package_form.is_valid() and preference_form.is_valid():
             packages = package_form.cleaned_data['packages']
-            project_name = preference_form.cleaned_data['name']
-            admin = preference_form.cleaned_data['admin']
-            database = preference_form.cleaned_data['database']
+            name = preference_form.cleaned_data['name']
     else:
         package_form = PackageForm()
+        preference_form = PreferenceForm()
             
     return render_to_response('packages/packages.html', {
         'packages': packages,

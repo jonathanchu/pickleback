@@ -11,4 +11,3 @@ class PackageForm(forms.Form):
         queryset=Package.objects.all(),
         widget=CheckboxSelectMultiple()
         )
-
