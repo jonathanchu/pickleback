@@ -290,6 +290,14 @@ button:hover,
     margin: 5px 0 20px 0;
 }
 
+.name-error {
+    position: absolute;
+    color: #ff0000;
+    top: 125px;
+    left: 400px;
+    font-size: 12px;
+}
+
 /* `table
 ----------------------------------------------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Ovo);

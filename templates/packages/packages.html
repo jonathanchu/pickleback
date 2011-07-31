@@ -5,10 +5,11 @@
 {% block body_class %}packages{% endblock %}
 {% block content %}
 
-<form action="." method="POST">
+<form action="." method="POST" id="build-form">
     {% csrf_token %}
+    <div class="name-error" style="display:none;">Sorry, not a valid project name. Please make sure the project name begins with a letter or underscore.</div>
     <div class="project-name">
-    <label for="id_name">Project Name</label><br><input id="id_name" maxlength="100" type="text" name="name" size="35" />
+        <label for="id_name">Project Name</label><br><input id="id_name" maxlength="100" type="text" name="name" size="35" />
     </div>
 
     <table>
@@ -35,4 +36,22 @@
         <input type="submit" value="Build">
     </div>
 </form>
+{% endblock %}
+
+{% block extra_body %}
+<script>
+    $(document).ready(function() {
+        $("#build-form").submit(function() {
+            var project_name = $("#id_name").val();
+            var check_name = /^[_a-zA-Z]\w*/;
+
+            if (check_name.test(project_name)) {
+                return true;
+            } else {
+                $(".name-error").show();
+                return false;
+            }
+        });
+    });
+</script>
 {% endblock %}
