@@ -21,8 +21,8 @@ TEMPLATE_DIRS = (
 ## DEBUGGING
 # ---------------------------------------------------------------------------
 
-DEBUG = True
-TEMPLATE_DEBUG = DEBUG
+DEBUG = False
+TEMPLATE_DEBUG = False
 
 ADMINS = (
     ('Jonathan Chu', 'jc@3atmospheres.com'),
