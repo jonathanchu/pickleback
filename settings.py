@@ -3,7 +3,7 @@ import sys
 
 ## GLOBAL PATHS
 # ---------------------------------------------------------------------------
-
+#
 join = lambda p1,p2: os.path.abspath(os.path.join(p1,p2))
 
 PROJECT = os.path.abspath(os.path.dirname(__file__))
@@ -68,7 +68,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 ## STATIC
 # ---------------------------------------------------------------------------
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = './static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(PROJECT, 'static'),
