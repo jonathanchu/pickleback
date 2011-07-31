@@ -11,6 +11,7 @@ urlpatterns = patterns('',
 
     # packages
     url(r'^build/', include("packages.urls")),
+    url(r'^build/', include("packages.urls"), name="build"),
 
     # search
     url(r'^search/', include("search.urls")),
