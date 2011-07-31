@@ -195,9 +195,15 @@ img { border: none; }
 .flt-img {
     float: left;
     width: 250px;
-    height: 275px;
+    height: 310px;
     margin: 0 72px 0 0;
     text-align: center;
+    font-weight: bold;
+}
+
+.flt-img img {
+    margin: 0 0 10px 0;
+    border: 1px solid #999;
 }
 
 button {
