@@ -11,20 +11,25 @@
 <form action="." method="POST">
     {% csrf_token %}
     <table>
+      <thead>
         <tr>
-            <td>Name</td>
-            <td>Description</td>
+          <th id="col-name">Name</th>
+          <th id="col-desc">Description</th>
         </tr>
-        {% for field in package_form %}
+      </thead>
+      <tbody>
+        {% for p in packages %}
             <tr>
-                <td>{{ field }}</td>
-                <td>{{ description }}</td>
+                <td>
+                  <label for="id_packages_{{ p.pk }}">
+                    <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />{{ p.name }}
+                  </label>
+                </td>
+                <td>{{ p.description }}</td>
             </tr>
         {% endfor %}
-        <tr>
-            <td><input type="submit" value="Submit"></td>
-        </tr>
+      </tbody>
     </table>
+    <input type="submit" value="Submit">
 </form>
-
 {% endblock %}

@@ -131,7 +131,7 @@ img { border: none; }
 #footer {
     position: relative;
     /* background: #83aed1 url(/media/img/ft.png) repeat-x; */
-    background-color: #83aed1;
+    /* background-color: #83aed1; */
     color: #fff;
     height: 125px;
     text-align: center;
@@ -148,4 +148,34 @@ img { border: none; }
     width: 900px;
     margin: 0 auto 0 auto;
  	font: 12px/1.5 'Lucida Grande', Helvetica, Arial, sans-serif;
+}
+
+/* `table
+----------------------------------------------------------------------------------------------------*/
+th#col-name {
+    width: 200px;
+}
+
+thead tr {
+background-color: #F2F7FA;
+border-top: 1px solid #B7CFDF;
+border-bottom: 1px solid #B7CFDF;
+margin-top: 10px;
+padding: 6px 10px;
+}
+
+tbody tr {
+background-image: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(0.34, rgb(212,212,212)),
+    color-stop(0.76, rgb(236,236,234))
+);
+background-image: -moz-linear-gradient(
+    center bottom,
+    rgb(212,212,212) 34%,
+    rgb(236,236,234) 76%
+);
+
 }

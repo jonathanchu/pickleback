@@ -15,5 +15,5 @@ def build(request):
             pass
 
     return render_to_response('packages/packages.html', {
-        'package_form': package_form,
+        'packages': Package.objects.all(),
     }, context_instance=RequestContext(request))
