@@ -12,6 +12,9 @@ urlpatterns = patterns('',
     # packages
     url(r'^build/', include("packages.urls")),
 
+    # search
+    url(r'^search/', include("search.urls")),
+
     # django-sentry
     (r'^sentry/', include('sentry.web.urls')),
 
