@@ -8,5 +8,5 @@
 
 ## python specific
 *.pyc
-local_settings.py
+./local_settings.py
 static/admin

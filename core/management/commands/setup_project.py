@@ -1,4 +1,5 @@
 import os
+import random
 import re
 import shutil
 import sys
@@ -29,13 +30,17 @@ def copy_site(name):
             path_new = os.path.join(top_dir, relative_dir, f.replace('project_name', name))
             fp_old = open(path_old, 'r')
             fp_new = open(path_new, 'w')
-            fp_new.write(fp_old.read().replace('{{ project_name }}', name))
+            fp_new.write(fp_old.read().replace('{{ project_name }}', name).replace('{{ secret_key }}', generate_secret_key()))
             fp_old.close()
             fp_new.close()
             try:
                 shutil.copymode(path_old, path_new)
             except OSError:
                 sys.stderr.write("Error, something bad happened.")
+
+def generate_secret_key():
+    c = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)"
+    return "".join([random.choice(c) for x in xrange(50)])
 
 def main():
     if len(sys.argv) < 1:
