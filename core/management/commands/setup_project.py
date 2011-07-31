@@ -9,7 +9,7 @@ def copy_site(name):
 
     """
     # destination = '/Users/jonathan/projects/'
-    destination = ''
+    destination = '/Users/nickficano/Desktop/temp/'
 
     top_dir = os.path.join(destination, name)
     os.mkdir(top_dir)

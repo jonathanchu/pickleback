@@ -13,23 +13,23 @@
     <table>
       <thead>
         <tr>
-          <th id="col-name">Name</th>
+          <th id="col-name">Package</th>
           <th id="col-desc">Description</th>
         </tr>
       </thead>
       <tbody>
         {% for p in packages %}
-            <tr>
-                <td>
+            <tr class="{% cycle 'row1' 'row2' %}">
+                <td class="name-data">
                   <label for="id_packages_{{ p.pk }}">
                     <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />{{ p.name }}
                   </label>
                 </td>
-                <td>{{ p.description }}</td>
+                <td class="desc-data">{{ p.description|truncatewords:15 }}</td>
             </tr>
         {% endfor %}
       </tbody>
     </table>
-    <input type="submit" value="Submit">
+    <!-- <input type="submit" value="Submit"> -->
 </form>
 {% endblock %}
