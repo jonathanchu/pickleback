@@ -3,7 +3,7 @@ import sys
 
 ## GLOBAL PATHS
 # ---------------------------------------------------------------------------
-
+#
 join = lambda p1,p2: os.path.abspath(os.path.join(p1,p2))
 
 PROJECT = os.path.abspath(os.path.dirname(__file__))
