@@ -9,15 +9,20 @@ def build(request):
     """
     List all packages available for build
     """
-    package_form = PackageForm()
-    preference_form = PreferenceForm()
     packages = Package.objects.all()
 
     if request.method == "POST":
-        if package_form.is_valid():
-            pass
-
+        preference_form = PreferenceForm(request.POST)
+        package_form = PackageForm(request.POST)
+        if package_form.is_valid() and preference_form.is_valid():
+            packages = package_form.cleaned_data['packages']
+            name = preference_form.cleaned_data['name']
+    else:
+        package_form = PackageForm()
+        preference_form = PreferenceForm()
+            
     return render_to_response('packages/packages.html', {
         'packages': packages,
+        'package_form': package_form,
         'preference_form': preference_form,
     }, context_instance=RequestContext(request))
