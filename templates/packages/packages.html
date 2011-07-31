@@ -8,14 +8,23 @@
 
 {% block content %}
 
-{% if packages %}
 <form action="." method="POST">
-    {% for field in package_form %}
-	    {{ field }}<br>
-    {% endfor %}
+    {% csrf_token %}
+    <table>
+        <tr>
+            <td>Name</td>
+            <td>Description</td>
+        </tr>
+        {% for field in package_form %}
+            <tr>
+                <td>{{ field }}</td>
+                <td>{{ description }}</td>
+            </tr>
+        {% endfor %}
+        <tr>
+            <td><input type="submit" value="Submit"></td>
+        </tr>
+    </table>
 </form>
-{% else %}
-    Sorry, there are no packages currently available.
-{% endif %}
 
 {% endblock %}

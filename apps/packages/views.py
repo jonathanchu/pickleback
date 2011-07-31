@@ -8,10 +8,12 @@ def build(request):
     """
     List all packages available for build
     """
-    packages = Package.objects.all()
     package_form = PackageForm()
 
+    if request.method == "POST":
+        if package_form.is_valid():
+            pass
+
     return render_to_response('packages/packages.html', {
-        'packages': packages,
         'package_form': package_form,
     }, context_instance=RequestContext(request))
