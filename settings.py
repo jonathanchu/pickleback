@@ -68,7 +68,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 ## STATIC
 # ---------------------------------------------------------------------------
 
-STATIC_ROOT = './static/'
+STATIC_ROOT = '/static/'
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     join(PROJECT, 'static'),
