@@ -2,14 +2,34 @@ import ConfigParser
 import sys
 import os
 import subprocess
+import shutil
+
+join = lambda a,*p: os.path.abspath(os.path.join(a,*p))
+
+WORKING_DIR = os.path.abspath(os.path.dirname(__file__))
+ASSETS_DIR = join(WORKING_DIR, 'assets')
+CONF_FILE = os.path.join(ASSETS_DIR, 'setup.cfg')
+BASE_PROJECT_DIR = join(ASSETS_DIR, 'project')
 
 Config = ConfigParser.ConfigParser()
-Config.read('setup.cfg')
-join = lambda a,*p: os.path.abspath(os.path.join(a,*p))
+Config.read(CONF_FILE)
+
 PROJECT_NAME = Config.get('project','name')
 
 def main(argv):
-    create_virtualenv(PROJECT_NAME)
+    bin_path = create_virtualenv(PROJECT_NAME)
+    project_dir = create_project(PROJECT_NAME)
+    
+    pip_requirements = os.path.join(ASSETS_DIR,'requirements.txt')
+    with open(pip_requirements,'r') as fh:
+        lines = fh.readlines()
+        for pkg in lines:
+            pip(bin_path, package_name=pkg)
+
+def create_project(project_name):
+    project = join(WORKING_DIR, project_name)
+    shutil.copytree(BASE_PROJECT_DIR, project)
+    return project
     
 def detect_active_virtualenv():
     """ check if a virtualenv is currently activated """
@@ -26,7 +46,6 @@ def create_virtualenv(project_name):
     import virtualenv
     workon_path = get_virtualenv_path()
     home_path = join(workon_path, project_name)
-    working_dir = os.path.abspath(os.path.dirname(__file__))
     
     virtualenv.create_environment(home_path, site_packages=False, clear=True)
     
@@ -37,10 +56,10 @@ def create_virtualenv(project_name):
     
     bin_path = join(home_path, bin_dirname)
     activate_virtualenv(bin_path)
-    base_req = os.path.join(working_dir, 'base-requirements.txt')
+    base_req = os.path.join(ASSETS_DIR, 'base-requirements.txt')
     easy_install(bin_path, 'pip')
     pip(bin_path, req_file=base_req)
-    django_init(bin_path, PROJECT_NAME)
+    return bin_path
 
 def easy_install(bin_path, package_name):
     f = os.path.join(bin_path, 'easy_install')
@@ -71,13 +90,6 @@ def activate_virtualenv(bin_path):
             new_sys_path.append(item)
             sys.path.remove(item)
     sys.path[:0] = new_sys_path
-
-def clean_up(bin_path):
-    pass
-
-def django_init(bin_path, project_name=PROJECT_NAME):
-    f = os.path.join(bin_path, 'django-admin.py')
-    subprocess.call([f, 'startproject', project_name])
 
 if __name__ == '__main__':
     main(sys.argv[1:])

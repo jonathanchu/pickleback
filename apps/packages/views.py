@@ -10,12 +10,14 @@ def build(request):
     List all packages available for build
     """
     packages = Package.objects.all()
-
+    
     if request.method == "POST":
         preference_form = PreferenceForm(request.POST)
         package_form = PackageForm(request.POST)
         if package_form.is_valid() and preference_form.is_valid():
-            packages = package_form.cleaned_data['packages']
+            req_pkg = package_form.cleaned_data['packages']
+            req_pkg = [p.canonical for p in packages]
+            
             name = preference_form.cleaned_data['name']
     else:
         package_form = PackageForm()
