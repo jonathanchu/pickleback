@@ -23,7 +23,7 @@
             <tr class="{% cycle 'row1' 'row2' %}">
                 <td class="name-data">
                   <label for="id_packages_{{ p.pk }}">
-                    <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />{{ p.name }}
+                    <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />&nbsp;{{ p.name }}
                   </label>
                 </td>
                 <td class="desc-data">{{ p.description|truncatewords:15 }}</td>
