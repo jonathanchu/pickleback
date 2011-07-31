@@ -182,6 +182,114 @@ img { border: none; }
     text-align: right;
 }
 
+/* `home
+----------------------------------------------------------------------------------------------------*/
+
+.float-cnt {
+    position: relative;
+    width: 100%;
+    clear: both;
+    overflow: hidden;
+}
+
+.flt-img {
+    float: left;
+    width: 250px;
+    height: 310px;
+    margin: 0 72px 0 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.flt-img img {
+    margin: 0 0 10px 0;
+    border: 1px solid #999;
+}
+
+button {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #ECECEC));
+    background: -webkit-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -o-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -ms-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: linear-gradient(top, white 0%, #ECECEC 100%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 0px 0px #DADADA;
+    -moz-box-shadow: 0px 1px 0px 0px #DADADA;
+    -o-box-shadow: 0px 1px 0px 0px #DADADA;
+    box-shadow: 0px 1px 0px 0px #DADADA;
+    margin: 20px 0;
+    padding: 10px 50px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-family: "Helvetica Neue";
+    text-shadow: 0 1px 0 white;
+    border: 1px solid #C2C2C2;
+    font-weight: bold;
+    color: #1fa0c5;
+    cursor: pointer;
+}
+
+.btn-cnt {
+    width: 100%;
+    text-align: center;
+}
+
+/* `build
+----------------------------------------------------------------------------------------------------*/
+
+.build-cnt input[type="submit"] {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #ECECEC));
+    background: -webkit-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -o-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -ms-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: linear-gradient(top, white 0%, #ECECEC 100%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 0px 0px #DADADA;
+    -moz-box-shadow: 0px 1px 0px 0px #DADADA;
+    -o-box-shadow: 0px 1px 0px 0px #DADADA;
+    box-shadow: 0px 1px 0px 0px #DADADA;
+    margin: 20px 0;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-family: "Helvetica Neue";
+    text-shadow: 0 1px 0 white;
+    border: 1px solid #C2C2C2;
+    font-weight: bold;
+    color: #1fa0c5;
+    cursor: pointer;
+}
+
+button:hover,
+.build-cnt input[type="submit"]:hover {
+    background: #ECECEC;
+    background: -moz-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ECECEC), color-stop(100%, white));
+    background: -webkit-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -o-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -ms-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: linear-gradient(top, #ECECEC 0%, white 100%);
+    opacity: 1;
+}
+
+.project-name input {
+    padding: 3px 4px;
+    font-size: 13px;
+    margin: 5px 0 20px 0;
+}
+
 /* `table
 ----------------------------------------------------------------------------------------------------*/
 @import url(http://fonts.googleapis.com/css?family=Ovo);
@@ -228,7 +336,7 @@ background-image: -webkit-gradient(
     linear,
     center bottom,
     center top,
-    from(#e8e8e8), 
+    from(#e8e8e8),
     color-stop(0.3, #f1f1f1),
     to(#f1f1f1));
 }

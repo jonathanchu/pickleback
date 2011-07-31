@@ -1,17 +1,15 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-
 {% block title %}Build your project{% endblock %}
-
 {% block body_class %}packages{% endblock %}
-
 {% block content %}
 
 <form action="." method="POST">
     {% csrf_token %}
-
-    {{ preference_form.as_p }}
+    <div class="project-name">
+    <label for="id_name">Project Name</label><br><input id="id_name" maxlength="100" type="text" name="name" size="35" />
+    </div>
 
     <table>
       <thead>
@@ -25,7 +23,7 @@
             <tr class="{% cycle 'row1' 'row2' %}">
                 <td class="name-data">
                   <label for="id_packages_{{ p.pk }}">
-                    <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />{{ p.name }}
+                    <input type="checkbox" name="packages" value="{{ p.pk }}" id="id_packages_{{ p.pk }}" />&nbsp;{{ p.name }}
                   </label>
                 </td>
                 <td class="desc-data">{{ p.description|truncatewords:15 }}</td>
@@ -33,9 +31,8 @@
         {% endfor %}
       </tbody>
     </table>
-    <input type="submit" value="Build">
+    <div class="build-cnt">
+        <input type="submit" value="Build">
+    </div>
 </form>
-
-
-
 {% endblock %}

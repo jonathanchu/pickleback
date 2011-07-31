@@ -1,10 +1,5 @@
 from django import forms
 
-from pickleback.apps.preferences.models import Preference
-
-class PreferenceForm(forms.ModelForm):
-    """
-    Preference form
-    """
-    class Meta:
-        model = Preference
+class PreferenceForm(forms.Form):
+    name = forms.CharField(max_length=100, label="Project Name", required=True,
+                           widget=forms.TextInput(attrs={"size": 35}))

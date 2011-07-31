@@ -4,13 +4,15 @@ import re
 import shutil
 import sys
 
-def copy_site(name):
+apps = ['app1', 'app2', 'app3']
+
+def copy_template(name):
     """
     Copies the project_template directory structure.
 
     """
-    # destination = '/Users/jonathan/projects/'
-    destination = '/Users/nickficano/Desktop/temp/'
+    destination = '/Users/jonathan/projects/'
+    # destination = '/Users/nickficano/Desktop/temp/'
 
     top_dir = os.path.join(destination, name)
     os.mkdir(top_dir)
@@ -38,6 +40,12 @@ def copy_site(name):
             except OSError:
                 sys.stderr.write("Error, something bad happened.")
 
+            # if f == 'settings.py':
+            #     with open("%s" % path_new, "a") as s:
+            #         for app in apps:
+            #             s.write(\t"%s,\n" % app)
+
+
 def generate_secret_key():
     c = "abcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)"
     return "".join([random.choice(c) for x in xrange(50)])
@@ -50,7 +58,7 @@ def main():
     name = sys.argv[1]
 
     if not os.path.exists(name):
-        copy_site(name)
+        copy_template(name)
     else:
         print "Project '%s' already exists. Aborting..." % name
 
