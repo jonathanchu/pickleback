@@ -10,7 +10,6 @@ urlpatterns = patterns('',
     url(r'^$', direct_to_template, { "template": "home.html", }, name="home"),
 
     # packages
-    url(r'^build/', include("packages.urls")),
     url(r'^build/', include("packages.urls"), name="build"),
 
     # search
