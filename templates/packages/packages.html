@@ -7,7 +7,10 @@
 
 <form action="." method="POST">
     {% csrf_token %}
-    {{ preference_form.as_p }}
+    <div class="project-name">
+    <label for="id_name">Project Name</label><br><input id="id_name" maxlength="100" type="text" name="name" size="35" />
+    </div>
+
     <table>
       <thead>
         <tr>
@@ -28,6 +31,8 @@
         {% endfor %}
       </tbody>
     </table>
-    <input type="submit" value="Build">
+    <div class="build-cnt">
+        <input type="submit" value="Build">
+    </div>
 </form>
 {% endblock %}

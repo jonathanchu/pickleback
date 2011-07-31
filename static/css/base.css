@@ -225,7 +225,8 @@ button {
     text-shadow: 0 1px 0 white;
     border: 1px solid #C2C2C2;
     font-weight: bold;
-    color: #666;
+    color: #1fa0c5;
+    cursor: pointer;
 }
 
 .btn-cnt {
@@ -233,6 +234,55 @@ button {
     text-align: center;
 }
 
+/* `build
+----------------------------------------------------------------------------------------------------*/
+
+.build-cnt input[type="submit"] {
+    background: white;
+    background: -moz-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #ECECEC));
+    background: -webkit-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -o-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: -ms-linear-gradient(top, white 0%, #ECECEC 100%);
+    background: linear-gradient(top, white 0%, #ECECEC 100%);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 1px 0px 0px #DADADA;
+    -moz-box-shadow: 0px 1px 0px 0px #DADADA;
+    -o-box-shadow: 0px 1px 0px 0px #DADADA;
+    box-shadow: 0px 1px 0px 0px #DADADA;
+    margin: 20px 0;
+    padding: 8px 30px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+    font-family: "Helvetica Neue";
+    text-shadow: 0 1px 0 white;
+    border: 1px solid #C2C2C2;
+    font-weight: bold;
+    color: #1fa0c5;
+    cursor: pointer;
+}
+
+button:hover,
+.build-cnt input[type="submit"]:hover {
+    background: #ECECEC;
+    background: -moz-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ECECEC), color-stop(100%, white));
+    background: -webkit-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -o-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: -ms-linear-gradient(top, #ECECEC 0%, white 100%);
+    background: linear-gradient(top, #ECECEC 0%, white 100%);
+    opacity: 1;
+}
+
+.project-name input {
+    padding: 3px 4px;
+    font-size: 13px;
+    margin: 5px 0 20px 0;
+}
 
 /* `table
 ----------------------------------------------------------------------------------------------------*/
