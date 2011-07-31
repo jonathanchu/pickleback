@@ -1,18 +1,13 @@
 {% extends "base.html" %}
 
 {% load i18n %}
-
 {% block title %}Build your project{% endblock %}
-
 {% block body_class %}packages{% endblock %}
-
 {% block content %}
 
 <form action="." method="POST">
     {% csrf_token %}
-
     {{ preference_form.as_p }}
-
     <table>
       <thead>
         <tr>
@@ -35,7 +30,4 @@
     </table>
     <input type="submit" value="Build">
 </form>
-
-
-
 {% endblock %}
