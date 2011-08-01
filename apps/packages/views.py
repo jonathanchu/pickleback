@@ -1,6 +1,7 @@
 from django.shortcuts import render_to_response, redirect
 from django.template import RequestContext
 from django.core.servers.basehttp import FileWrapper
+from django.http import HttpResponse
 
 from pickleback.apps.packages.models import Package
 from pickleback.apps.packages.forms import PackageForm
