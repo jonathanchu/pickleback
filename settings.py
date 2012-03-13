@@ -1,3 +1,5 @@
+# Django settings for pickleback project.
+
 import os
 import sys
 
