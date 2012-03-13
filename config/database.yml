@@ -1,4 +1,0 @@
-postgres:
-  adapter: postgresql
-  database: pickleback
-  username: postgres
